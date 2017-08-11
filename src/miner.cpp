@@ -87,14 +87,8 @@ CBlockTemplate* CreateNewBlock(const CChainParams& chainparams, const CScript& s
     CMutableTransaction txNew;
     txNew.vin.resize(1);
     txNew.vin[0].prevout.SetNull();
-    txNew.vout.resize(2);
+    txNew.vout.resize(1);
     txNew.vout[0].scriptPubKey = scriptPubKeyIn;
-    //txNew.vout[1].scriptPubKey = CScript() << OP_DUP << OP_HASH160 << ParseHex("58D5DA2AD6C07B6819FEA8634015225569D9D196") << OP_EQUALVERIFY << OP_CHECKSIG;
-    txNew.vout[1].scriptPubKey = dSCRIPT;
-    LogPrintf("CreateNewBlock(1): txNew.vout[0].scriptPubKey %s\n", HexStr( txNew.vout[0].scriptPubKey ) );
-    LogPrintf("CreateNewBlock(1): txNew.vout[1].scriptPubKey %s\n", HexStr( txNew.vout[1].scriptPubKey ) );
-    LogPrintf("CreateNewBlock(1): dSCRIPT %s\n", HexStr( dSCRIPT ) );
-    LogPrintf("CreateNewBlock(1): scriptPubKeyIn %s\n", HexStr( scriptPubKeyIn ) );
     // Largest block you're willing to create:
     unsigned int nBlockMaxSize = GetArg("-blockmaxsize", DEFAULT_BLOCK_MAX_SIZE);
     // Limit to between 1K and MAX_BLOCK_SIZE-1K for sanity:
