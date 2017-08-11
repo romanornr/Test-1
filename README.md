@@ -2,7 +2,6 @@ MonetaryUnit Core staging tree 1.0.1
 ===============================
 
 
-
 https://www.monetaryunit.org
 
 
